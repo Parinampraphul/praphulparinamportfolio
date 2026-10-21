@@ -3,131 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praphul Parinam - Web Developer</title>
+    <title>Praphul Parinam | Full Stack & Software Engineer</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
-}
-
-header {
-    background: #920494;
-    color: white;
-    padding: 0.2rem 0;
-    text-align: center;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: large;  
-}
-
-main {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-section {
-    margin-bottom: 2rem;
-}
-
-h3 {
-    color: #920494;
-    border-bottom: 2px solid #920494;
-    padding-bottom: 0.5rem;
-}
-
-img {
-    border-style: none;
-    border-radius: 50%;
-    margin: 0 auto;
-    max-width: 150px;
-    display: block;
-}
-
-.icon {
-    font-size: 1.2em;
-    margin-right: 0.5rem;
-}
-
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background: #920494;
-    color: white;
-    position: relative;
-    width: 100%;
-    height: 10px;
-    bottom: 0;
-    margin: auto 0;
-    text-align: center;
-}
-
-    </style>
 </head>
 <body>
     <header>
         <h1>Praphul Parinam</h1>
-        <h2>Web Developer</h2>
+        <h2>Software Engineer & Full Stack Developer</h2>
     </header>
-
+    
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <main>
+        <!-- About Section -->
         <section id="about">
             <h3>About Me</h3>
-            <img src="profile.jpg" alt="Profile Photo">
-            <p>Motivated IT professional with a solid educational background, holding a bachelor’s degree in Information Technology and a master’s degree in Advanced Computer Science. Adept at leveraging a comprehensive skill set to excel in web development roles, with proven experience in creating a recruiter assistant chatbot showcasing expertise in natural language processing and artificial intelligence. Proficient in designing visually appealing and user-friendly web pages, with a keen eye for detail and a focus on delivering an optimal user experience.</p>
+            <div class="about-grid">
+                <img src="profile.jpg" alt="Praphul Parinam Profile Picture" class="profile-img">
+                <p>Motivated IT professional holding a Bachelor’s degree in Information Technology and a Master’s degree in Advanced Computer Science. Adept at designing robust web applications, building automated database workflows using Microsoft SQL Server, and exploring intelligent systems like conversational assistant bots.</p>
+            </div>
         </section>
 
+        <!-- Projects Section -->
+        <section id="projects">
+            <h3>Featured Projects</h3>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div>
+                        <h4>certificate-portal</h4>
+                        <p>Production-ready automated event certificate portal built with FastAPI, SQL Server, and ReportLab. Features secure admin CRUD, CSV attendee imports, shareable claim links, and dynamic PDF generation.</p>
+                        <div class="badge-container">
+                            <span class="badge">Python</span>
+                            <span class="badge">FastAPI</span>
+                            <span class="badge">SQL Server</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Parinampraphul/certificate-portal" target="_blank">View Repository →</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div>
+                        <h4>MSSQL-EMAIL-AUTOMATION</h4>
+                        <p>A database-driven MSSQL email automation system using Database Mail. Automates monthly timesheet reminders with dynamic HTML templates and auto-validates employee assignment eligibility.</p>
+                        <div class="badge-container">
+                            <span class="badge">T-SQL</span>
+                            <span class="badge">Database Mail</span>
+                            <span class="badge">Automation</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Parinampraphul/MSSQL-EMAIL-AUTOMATION" target="_blank">View Repository →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
         <section id="skills">
-            <h3>Skills</h3>
-            <ul>
-                <li>Web Development: HTML, CSS, JavaScript</li>
-                <li>Backend Development: SQL Server</li>
-                <li>Other Skills: Database Management, SDLC, Data Analysis</li>
+            <h3>Core Skills & Expertise</h3>
+            <ul class="skills-grid">
+                <li><strong>Languages:</strong> Python, JavaScript, T-SQL, HTML5, CSS3</li>
+                <li><strong>Backend & Frameworks:</strong> FastAPI, Flask, REST APIs</li>
+                <li><strong>Database Management:</strong> Microsoft SQL Server (MSSQL), Optimization</li>
+                <li><strong>Tools & Workflows:</strong> Git, GitHub, SDLC, Data Analysis</li>
             </ul>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact">
-            <h3>Contact Information</h3>
-            <p><span class="icon">📍</span> Address: Coventry, West Midlands, CV1 2AJ</p>
-            <p><span class="icon">📞</span> Phone: <a href="tel:+447435386506">+44 7435 386506</a></p>
-            <p><span class="icon">✉️</span> Email: <a href="mailto:parinampraphul20@gmail.com">parinampraphul20@gmail.com</a></p>
-            <p><span class="icon">💼</span> LinkedIn: <a href="https://www.linkedin.com/in/parinam-praphul-2b8a99203/" >parinam-praphul-2b8a99203</a></p>
+            <h3>Get in Touch</h3>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span>📍</span> <span>Coventry, UK / Hyderabad</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span> <a href="mailto:parinampraphul20@gmail.com">Email Me</a>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span> <a href="https://www.linkedin.com/in/parinam-praphul" target="_blank">LinkedIn Profile</a>
+                </div>
+                <div class="contact-item">
+                    <span>📂</span> <a href="https://github.com/Parinampraphul" target="_blank">GitHub Profile</a>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        
-            &copy; 2024 Praphul Parinam. All rights reserved.</p>
+        <p>&copy; 2026 Praphul Parinam. All rights reserved.</p>
     </footer>
 </body>
 </html>
