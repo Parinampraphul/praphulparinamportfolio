@@ -1,305 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praphul Parinam | Software Engineer & Computer Science Professional</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        :root {
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-card: #1e293b;
-            --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.15);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border: #334155;
-            --radius: 12px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            line-height: 1.7;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        /* Header & Navigation */
-        header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            border-bottom: 1px solid var(--border);
-            padding: 3.5rem 1rem;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.75rem;
-            font-weight: 800;
-            letter-spacing: -0.025em;
-            background: linear-gradient(to right, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
-        }
-
-        header h2 {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        nav {
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(12px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        nav ul li {
-            margin: 0 1.25rem;
-        }
-
-        nav ul li a {
-            display: block;
-            text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 500;
-            font-size: 0.95rem;
-            padding: 1rem 0.25rem;
-            transition: color 0.2s ease;
-        }
-
-        nav ul li a:hover, nav ul li a.active {
-            color: var(--accent);
-        }
-
-        /* Main Layout */
-        main {
-            max-width: 1000px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-        }
-
-        section {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-            border-radius: var(--radius);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: border-color 0.2s ease;
-        }
-
-        section:hover {
-            border-color: rgba(56, 189, 248, 0.4);
-        }
-
-        h3 {
-            color: var(--text-main);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.75rem;
-        }
-
-        /* About Grid */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--accent);
-            box-shadow: 0 0 20px var(--accent-glow);
-        }
-
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .project-card {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .project-card h4 {
-            color: var(--accent);
-            font-size: 1.15rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .project-card p {
-            color: var(--text-muted);
-            font-size: 0.925rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .badge-container {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.25rem;
-        }
-
-        .badge {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            font-size: 0.75rem;
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        /* Skills List */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-            list-style: none;
-        }
-
-        .skills-grid li {
-            background: rgba(15, 23, 42, 0.5);
-            border: 1px solid var(--border);
-            padding: 1rem;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        .skills-grid li strong {
-            color: var(--text-main);
-        }
-
-        /* Experience Timeline */
-        .experience-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .experience-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .experience-item h4 {
-            color: var(--text-main);
-            font-size: 1.1rem;
-        }
-
-        .experience-meta {
-            font-size: 0.85rem;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-item p {
-            color: var(--text-muted);
-            font-size: 0.925rem;
-        }
-
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: rgba(15, 23, 42, 0.5);
-            border: 1px solid var(--border);
-            padding: 1rem;
-            border-radius: 8px;
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-
-        a:hover {
-            opacity: 0.8;
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2.5rem;
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .profile-img {
-                margin: 0 auto;
-            }
-            header h1 {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d0b">
+  <meta name="description" content="Parinam Praphul Bharadwaj — software engineering, business analysis, workflow automation and application development.">
+  <title>Parinam Praphul Bharadwaj — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Praphul Parinam</h1>
-        <h2>Software Engineer & Computer Science Professional</h2>
-    </header>
-    
-    <nav>
-        <ul id="nav-links">
-            <li><a
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-glow" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <a class="wordmark" href="#top" aria-label="Parinam Praphul Bharadwaj home">P<span>/</span>P</a>
+    <div class="availability"><span class="pulse"></span><span>HYDERABAD, INDIA</span><i></i><span>OPEN TO SELECT ROLES</span></div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">MENU <span>＋</span></button>
+  </header>
+
+  <nav class="command-dock" id="command-dock" aria-label="Quick navigation">
+    <a href="#work" data-nav="work">Work <span>01</span></a>
+    <a href="#approach" data-nav="approach">Approach <span>02</span></a>
+    <a href="#experience" data-nav="experience">Experience <span>03</span></a>
+    <a href="#toolkit" data-nav="toolkit">Toolkit <span>04</span></a>
+    <a href="#contact" data-nav="contact">Contact <span>↗</span></a>
+  </nav>
+
+  <main id="main">
+    <section class="hero wrap" id="top">
+      <div class="hero-overline reveal"><span class="mono">PORTFOLIO / 2026</span><span class="overline-line"></span><span class="mono">ENGINEERING × ANALYSIS</span></div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="hero-kicker reveal">I make complex things <span>make sense.</span></p>
+          <h1 class="hero-title"><span class="title-line"><span>From messy</span></span><span class="title-line"><span>problems to</span></span><span class="title-line accent-line"><span>working systems<span class="period">.</span></span></span></h1>
+          <p class="hero-description reveal">I'm <strong>Parinam Praphul Bharadwaj</strong> — a software engineering professional who connects business needs with practical software, automation, and clear workflows.</p>
+          <div class="hero-actions reveal">
+            <a class="magnetic button button-bright" href="#work">Explore my work <span>↘</span></a>
+            <a class="magnetic text-action" href="mailto:parinampraphul20@gmail.com">Start a conversation <span>↗</span></a>
+          </div>
+        </div>
+        <div class="hero-art reveal" aria-label="Interactive constellation representing connected systems">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-orbit orbit-three"></div>
+          <div class="art-cross cross-a"></div><div class="art-cross cross-b"></div>
+          <div class="art-core"><span>IDEA</span><b>→</b><span>SYSTEM</span></div>
+          <span class="art-node node-a"></span><span class="art-node node-b"></span><span class="art-node node-c"></span><span class="art-node node-d"></span>
+          <span class="art-label label-a">REQUIREMENTS</span><span class="art-label label-b">LOGIC</span><span class="art-label label-c">DELIVERY</span>
+          <div class="art-coordinate mono">17°26' N<br>78°27' E</div>
+          <div class="art-bottom mono"><span>COMPLEXITY</span><span class="art-dash"></span><span>CLARITY</span></div>
+        </div>
+      </div>
+      <div class="hero-foot reveal"><span><b class="live-dot"></b> BUILDING WORKFLOWS IN HYDERABAD</span><span class="mono">SCROLL TO EXPLORE ↓</span></div>
+    </section>
+
+    <section class="work-section wrap section-pad" id="work">
+      <div class="section-head reveal"><div><p class="eyebrow mono">01 — SELECTED WORK</p><h2>Proof of <em>thinking.</em><br>Proof of <em>building.</em></h2></div><p class="section-intro">Three projects, three different problems. Explore the decisions, workflows, and implementation behind each one.</p></div>
+      <div class="work-filter reveal" role="group" aria-label="Filter projects by focus">
+        <span class="mono">VIEW BY</span><button class="filter-chip active" data-filter="all" aria-pressed="true">All work <small>03</small></button><button class="filter-chip" data-filter="engineering" aria-pressed="false">Engineering</button><button class="filter-chip" data-filter="analysis" aria-pressed="false">Analysis</button><span class="filter-hint mono">SELECT A PROJECT ↗</span>
+      </div>
+      <div class="bento-grid">
+        <button class="project-card project-large reveal" data-project="email" data-tags="engineering analysis sql server t-sql database automation workflow testing" aria-haspopup="dialog">
+          <span class="card-top"><span class="mono">PROJECT / 01</span><span class="card-arrow">↗</span></span>
+          <div class="email-visual" aria-hidden="true"><div class="email-window"><div class="window-bar"><i></i><i></i><i></i><span>REMINDER_WORKFLOW.SQL</span></div><div class="code-lines"><span><b>01</b><i>CREATE PROCEDURE</i> <strong>dbo.SendReminder</strong></span><span><b>02</b> <em>AS</em></span><span><b>03</b> <i>BEGIN</i></span><span><b>04</b> &nbsp; CHECK <strong>eligibility</strong></span><span><b>05</b> &nbsp; PREVENT <strong>duplicates</strong></span><span><b>06</b> &nbsp; SEND <strong>HTML email</strong></span><span><b>07</b> &nbsp; WRITE <strong>audit log</strong></span><span><b>08</b> <i>END</i></span></div><div class="visual-stamp">SQL<br><b>01</b></div></div><div class="visual-orbit"></div></div>
+          <div class="card-copy"><div class="card-kicker mono">DATABASE AUTOMATION · T-SQL</div><h3>MSSQL Email<br>Automation System</h3><p>Make a recurring reminder process more consistent, traceable, and maintainable with a database-driven workflow.</p><div class="card-footer"><span>Database Developer</span><span class="open-case">OPEN CASE STUDY <b>↗</b></span></div></div>
+        </button>
+        <button class="project-card project-bot reveal" data-project="bot" data-tags="engineering analysis node.js javascript baileys automation communication" aria-haspopup="dialog">
+          <span class="card-top"><span class="mono">PROJECT / 02</span><span class="card-arrow">↗</span></span>
+          <div class="bot-visual" aria-hidden="true"><div class="message-bubble bubble-one"><span class="bubble-icon">↗</span><span>Guild event reminder</span><small>Delivered · workflow</small></div><div class="message-bubble bubble-two"><span class="bubble-icon">✓</span><span>Follow-up message</span><small>Session managed</small></div><div class="bot-rings"><i></i><i></i><i></i><div>WA</div></div><span class="bot-caption mono">NODE.JS / BAILEYS</span></div>
+          <div class="card-copy"><div class="card-kicker mono">COMMUNICATION AUTOMATION</div><h3>Data & AI Guild<br>Reminder Bot</h3><p>WhatsApp event reminders and follow-up communications, with session management and attendee processing.</p><div class="card-footer"><span>Software Developer</span><span class="open-case">OPEN CASE STUDY <b>↗</b></span></div></div>
+        </button>
+        <button class="project-card project-text reveal" data-project="text" data-tags="engineering analysis python tkinter sql server hugging face oop nlp testing" aria-haspopup="dialog">
+          <span class="card-top"><span class="mono">PROJECT / 03</span><span class="card-arrow">↗</span></span>
+          <div class="nlp-visual" aria-hidden="true"><div class="nlp-input">"Understand the signal<br>inside the text."</div><div class="nlp-flow"><span>INPUT</span><i></i><span>ANALYZE</span><i></i><span>INSIGHT</span></div><div class="nlp-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="nlp-stamp mono">NLP / 03</span></div>
+          <div class="card-copy"><div class="card-kicker mono">APPLICATION DEVELOPMENT · NLP</div><h3>Text Analysis<br>Using OOP</h3><p>A desktop app combining authentication and text-processing capabilities with object-oriented design.</p><div class="card-footer"><span>Application Developer</span><span class="open-case">OPEN CASE STUDY <b>↗</b></span></div></div>
+        </button>
+      </div>
+      <p class="metric-note mono"><span>NOTE /</span> Case studies show implementation and capabilities. No unverified impact metrics are presented.</p>
+    </section>
+
+    <section class="approach-section section-pad" id="approach">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="eyebrow mono">02 — HOW I THINK</p><h2>From ambiguity<br>to <em>alignment.</em></h2></div><p class="section-intro">The best solution starts before the first line of code. I connect requirements to workflows, workflows to implementation, and implementation to validation.</p></div>
+        <div class="process-track reveal" id="process-track">
+          <div class="process-progress" id="process-progress"></div>
+          <article class="process-step"><div class="process-node"><span>01</span></div><p class="mono">DISCOVER</p><h3>Understand<br>the real problem.</h3><p>Stakeholders, requirements, constraints, process gaps, and success criteria.</p><div class="process-art"><span>ASK</span><i>→</i><span>DEFINE</span></div></article>
+          <article class="process-step"><div class="process-node"><span>02</span></div><p class="mono">DESIGN</p><h3>Make the path<br>visible.</h3><p>Workflows, data structures, acceptance criteria, and technical decisions.</p><div class="process-art"><span>MAP</span><i>→</i><span>MODEL</span></div></article>
+          <article class="process-step"><div class="process-node"><span>03</span></div><p class="mono">DELIVER</p><h3>Build. Validate.<br>Iterate.</h3><p>Implementation, testing, defect investigation, documentation, and refinement.</p><div class="process-art"><span>BUILD</span><i>→</i><span>VERIFY</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience-section wrap section-pad" id="experience">
+      <div class="section-head reveal"><div><p class="eyebrow mono">03 — EXPERIENCE</p><h2>Where ideas<br>meet <em>practice.</em></h2></div><p class="section-intro">Professional experience spanning software development, database automation, technical documentation, and cybersecurity analysis.</p></div>
+      <div class="timeline">
+        <article class="timeline-item reveal"><div class="timeline-date mono">APR 2026 — PRESENT<span>HYDERABAD, INDIA</span></div><div class="timeline-body"><div class="timeline-title"><h3>Trainee Software Engineer</h3><span>SPARITY</span></div><ul><li>Develop and maintain application features using Python, JavaScript, Node.js, HTML, CSS, and SQL Server.</li><li>Designed a SQL Server email automation workflow using T-SQL, stored procedures, Database Mail, dynamic HTML templates, validation, and audit logging.</li><li>Built a WhatsApp event reminder bot for Data & AI Guild communications, including session management and attendee processing.</li><li>Developed a Python desktop text-analysis application using Tkinter, SQL Server, Hugging Face APIs, and OOP principles.</li><li>Support application validation, functional and regression testing, troubleshooting, root-cause investigation, and technical documentation.</li></ul><div class="timeline-tags"><span>SOFTWARE</span><span>DATABASES</span><span>TESTING</span><span>DOCUMENTATION</span></div></div></article>
+        <article class="timeline-item reveal"><div class="timeline-date mono">JUL 2019 — AUG 2019<span>HYDERABAD, INDIA</span></div><div class="timeline-body"><div class="timeline-title"><h3>Cyber Security Intern</h3><span>DRDO</span></div><ul><li>Analysed network attack vectors and examined potential security vulnerabilities.</li><li>Evaluated cybersecurity risks and mitigation strategies to identify potential improvements.</li><li>Supported threat and risk assessment activities and documented findings with remediation recommendations.</li><li>Prepared security guidelines and technical reports communicating findings and corrective actions.</li></ul><div class="timeline-tags"><span>SECURITY ANALYSIS</span><span>RISK ASSESSMENT</span><span>REPORTING</span></div></div></article>
+      </div>
+    </section>
+
+    <section class="toolkit-section section-pad" id="toolkit">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="eyebrow mono">04 — TOOLKIT MATRIX</p><h2>Find the tool.<br>See the <em>connection.</em></h2></div><p class="section-intro">Select a technology to highlight the projects where it appears. The toolkit is a map of how skills connect to actual work.</p></div>
+        <div class="toolkit-layout">
+          <div class="skill-panel reveal"><div class="skill-panel-head"><span class="mono">SELECT A TECHNOLOGY</span><button id="clear-skill" class="clear-skill" type="button">CLEAR ×</button></div><div class="skill-category"><h3>Languages</h3><div class="skill-chips"><button data-skill="Python">Python</button><button data-skill="JavaScript">JavaScript</button><button data-skill="SQL">SQL</button><button data-skill="T-SQL">T-SQL</button><button data-skill="HTML5">HTML5</button><button data-skill="CSS3">CSS3</button></div></div><div class="skill-category"><h3>Data & frameworks</h3><div class="skill-chips"><button data-skill="SQL Server">SQL Server</button><button data-skill="MongoDB">MongoDB</button><button data-skill="Node.js">Node.js</button><button data-skill="Flask">Flask</button><button data-skill="Tkinter">Tkinter</button><button data-skill="Hugging Face APIs">Hugging Face APIs</button><button data-skill="Baileys">Baileys</button><button data-skill="REST APIs">REST APIs</button></div></div><div class="skill-category"><h3>Quality & delivery</h3><div class="skill-chips"><button data-skill="Testing">Testing</button><button data-skill="OOP">OOP</button><button data-skill="Agile Scrum">Agile Scrum</button><button data-skill="Power BI">Power BI</button><button data-skill="MS Visio">MS Visio</button><button data-skill="MS Project">MS Project</button><button data-skill="Excel">Excel</button><button data-skill="Git">Git</button></div></div></div>
+          <div class="skill-results reveal"><div class="results-heading"><span class="mono">PROJECT CONNECTIONS</span><span id="skill-result-count">03 PROJECTS</span></div><p id="skill-result-message">Choose a skill to see where it connects.</p><div class="skill-project-list"><a href="#work" data-project-link="email"><span class="result-index">01</span><span><b>MSSQL Email Automation</b><small>Database-driven reminder workflow</small></span><span class="result-arrow">↗</span></a><a href="#work" data-project-link="bot"><span class="result-index">02</span><span><b>Data & AI Guild Reminder Bot</b><small>WhatsApp event communication</small></span><span class="result-arrow">↗</span></a><a href="#work" data-project-link="text"><span class="result-index">03</span><span><b>Text Analysis Using OOP</b><small>Desktop text analysis application</small></span><span class="result-arrow">↗</span></a></div><p class="toolkit-foot mono">ALSO: MANUAL · UNIT · REGRESSION · API TESTING / SDLC · STLC / REQUIREMENTS & TECHNICAL DOCUMENTATION</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="education-section wrap section-pad" id="education">
+      <div class="section-head reveal"><div><p class="eyebrow mono">05 — EDUCATION</p><h2>Built on a<br><em>strong foundation.</em></h2></div></div>
+      <div class="education-list"><article class="education-row reveal"><span class="mono">2021 — 2024</span><div><h3>MSc Advanced Computer Science with Industry</h3><p>University of Leicester <span>·</span> United Kingdom</p></div><b>MSC</b></article><article class="education-row reveal"><span class="mono">2017 — 2021</span><div><h3>BTech Information Technology</h3><p>Institute of Aeronautical Engineering <span>·</span> Hyderabad, India</p></div><b>BTECH</b></article></div>
+    </section>
+
+    <section class="contact-section wrap" id="contact">
+      <div class="contact-top reveal"><p class="eyebrow mono">06 — YOUR TURN</p><span class="contact-orbit" aria-hidden="true">↗</span></div>
+      <div class="contact-grid reveal"><h2>Let's make<br>something <em>useful.</em></h2><div class="contact-side"><p>Interested in work where software, data, and clear problem-solving come together? Let's connect.</p><a class="magnetic button button-bright" href="mailto:parinampraphul20@gmail.com">Email me <span>↗</span></a></div></div>
+      <div class="contact-links reveal"><a href="mailto:parinampraphul20@gmail.com"><span class="mono">EMAIL</span><b>parinampraphul20@gmail.com</b><i>↗</i></a><a href="https://www.linkedin.com/in/parinam-praphul/" target="_blank" rel="noreferrer"><span class="mono">LINKEDIN</span><b>parinam-praphul</b><i>↗</i></a><a href="https://github.com/Parinampraphul" target="_blank" rel="noreferrer"><span class="mono">GITHUB</span><b>Parinampraphul</b><i>↗</i></a><a href="tel:+918712441396"><span class="mono">PHONE</span><b>+91 87124 41396</b><i>↗</i></a></div>
+    </section>
+  </main>
+
+  <footer class="footer wrap"><a class="wordmark" href="#top">P<span>/</span>P</a><p>Intentional by design. Useful by default.</p><span class="mono">© <span id="year"></span> PARINAM PRAPHUL BHARADWAJ</span></footer>
+
+  <dialog class="case-dialog" id="case-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-shell"><div class="dialog-head"><span class="mono" id="dialog-kicker">CASE STUDY / 01</span><button class="dialog-close" id="dialog-close" aria-label="Close case study">CLOSE <span>×</span></button></div><div class="dialog-content" id="dialog-content"></div></div>
+  </dialog>
+  <div class="cursor cursor-dot" aria-hidden="true"></div><div class="cursor cursor-ring" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
